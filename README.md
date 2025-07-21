@@ -1,11 +1,20 @@
-## 🚀 프로젝트 실행 방법
+### 기술 스택
 
-### 사전 요구사항
+- **React 18** - 함수형 컴포넌트, Hooks 활용
+- **TypeScript** - 엄격한 타입 안전성 적용
+- **Tailwind CSS** - 유틸리티 우선 스타일링
 
-- Node.js 18.0.0 이상
-- npm 또는 yarn
+### 상태 관리
 
-### 설치 및 실행
+- **TanStack Query** - 서버 상태 관리, 캐싱, 무한 스크롤
+- **Zustand** - 경량 클라이언트 상태 관리
+
+### 개발 도구
+
+- **Vite** - 빠른 번들링 및 HMR
+- **ESLint** - 코드 품질 관리
+
+## 🚀 실행 방법
 
 ```bash
 # 의존성 설치
@@ -16,98 +25,51 @@ npm run dev
 
 # 프로덕션 빌드
 npm run build
-
-# 빌드 결과 미리보기
-npm run preview
 ```
 
-개발 서버는 기본적으로 `http://localhost:5173`에서 실행됩니다.
+**접속:** `http://localhost:5173`
 
-## 📁 폴더 구조
+## 📋 구현 사항
+
+### ✅ 필수 기능
+
+- [x] **페이지네이션** - 20개 단위 무한 스크롤 구현
+- [x] **키워드 검색** - 제목/본문 대소문자 무관 검색, 500ms 디바운스
+- [x] **시간대 변환** - UTC → KST/CST 자동 변환
+- [x] **카테고리 매핑** - ID → 한글명 동적 변환
+- [x] **복합 필터링** - 거래소 + 카테고리 + 날짜 + 키워드 동시 적용
+
+### 🚀 추가 기능
+
+- [x] **반응형 UI** - PC/모바일 레이아웃 자동 전환
+
+## 📁 프로젝트 구조
 
 ```
 src/
-├── api/                    # API 통신 로직
-│   └── announcements.ts    # 공시 데이터 API
-├── components/             # 재사용 가능한 컴포넌트
-│   └── common/
-│       ├── AnnouncementItem.tsx    # 공시 아이템 (PC/Mobile 대응)
-│       ├── AnnouncementList.tsx    # 공시 목록 (무한 스크롤)
-│       ├── DateRange.tsx           # 날짜 범위 선택
-│       ├── FormInput.tsx           # 입력 폼
-│       ├── FormSelect.tsx          # 선택 드롭다운
-│       └── index.ts               # 컴포넌트 export
-├── data/                   # 정적 데이터
-│   ├── hongkong_announcements.json
-│   ├── hongkong_categories.json
-│   ├── shenzhen_announcements.json
-│   └── shenzhen_categories.json
-├── features/               # 기능별 훅
-│   └── hooks/
-│       ├── useAnnouncements.ts     # 공시 데이터 관리
-│       └── useMediaQuery.ts        # 반응형 미디어 쿼리
-├── stores/                 # 전역 상태 관리
-│   ├── announcementStore.ts        # 공시 상태
-│   └── filterStore.ts              # 필터 상태
-├── types/                  # TypeScript 타입 정의
-│   └── announcement.ts
-├── utils/                  # 유틸리티 함수
-│   ├── categoryUtils.ts            # 카테고리/토픽 매핑
-│   └── dateUtils.ts               # 날짜 처리
-└── App.tsx                # 메인 앱 컴포넌트
+├── 📂 components/common/      # 재사용 컴포넌트
+├── 📂 data/                  # 공시 정적 데이터 (JSON 파일)
+├── 📂 features/hooks/        # 커스텀 훅
+├── 📂 stores/                # 상태 관리
+├── 📂 api/                   # API 레이어
+├── 📂 types/                 # TypeScript 타입 정의
+└── 📂 utils/                 # 유틸리티 함수
 ```
 
-## 🛠 사용 기술 스택 및 선택 이유
+## ⚙️ 성능 최적화
 
-### 핵심 기술
-
-- **React 18**: 최신 React 기능 활용, 컴포넌트 기반 아키텍처
-- **TypeScript**: 타입 안전성으로 런타임 오류 방지 및 개발 생산성 향상
-- **Vite**: 빠른 개발 서버와 최적화된 번들링
-
-### 상태 관리
-
-- **TanStack Query**: 서버 상태 관리, 캐싱, 무한 스크롤
-- **Zustand**: 클라이언트 상태 관리, 가볍고 단순한 구조
-
-### 스타일링
-
-- **Tailwind CSS**: 유틸리티 우선 CSS 프레임워크로 빠른 UI 개발
-- **반응형 디자인**: 772px 기준 모바일/데스크톱 최적화
-
-### 데이터 처리
-
-- **dayjs**: 경량 날짜 라이브러리, 시간대 변환 (UTC → KST/CST)
-- **React DatePicker**: 커스텀 스타일링된 날짜 선택 컴포넌트
-
-## 🎯 구현 사항
-
-### 필수 요구사항 ✅
-
-- **공시 목록 10개 단위 출력** - TanStack Query 페이지네이션
-- **무한 스크롤** - 스크롤 이벤트 기반 최적화 (90% 지점 트리거)
-- **키워드 검색** - 제목/본문 대소문자 구분 없는 실시간 검색 500ms 디바운스 처리
-- **시간대 변환** - UTC → KST(+9), CST(+8) 자동 변환
-- **카테고리 매핑** - ID → 한글 명칭 자동 변환 (홍콩/심천 지원)
-- **필터링** - 거래소, 카테고리, 날짜 범위 복합 필터
-
-### 추가 구현 사항 🚀
-
-- **반응형 디자인** - 772px 기준 PC/모바일 레이아웃 자동 전환 (DefaultContent, MobileContent 컴포넌트 분리)
-- **성능 최적화** - useMemo 메모이제이션, React Query 캐싱
-
-## ⚡ 성능 및 상태관리 전략
-
-### 데이터 캐싱 전략
+### 🚄 데이터 캐싱
 
 ```typescript
-staleTime: 5 * 60 * 1000,    // 5분간 fresh 데이터
-gcTime: 10 * 60 * 1000,      // 10분간 캐시 유지
+// TanStack Query 캐싱 전략
+staleTime: 5 * 60 * 1000,    // 5분간 fresh 상태 유지
+gcTime: 10 * 60 * 1000,      // 10분 후 가비지 컬렉션
 ```
 
-### 검색 최적화
+### 🔍 디바운스 적용
 
 ```typescript
+// 검색 입력 최적화
 useEffect(() => {
   const timer = setTimeout(() => {
     setKeyword(localKeyword);
@@ -116,38 +78,57 @@ useEffect(() => {
 }, [localKeyword]);
 ```
 
-### 상태관리
-
-#### 서버 상태
-
-- 공시 데이터 페칭/캐싱/무한스크롤
-- 카테고리 데이터 관리 (홍콩/심천)
-- 인기 검색어, 공시 통계
-
-#### 클라이언트 상태
+### 📱 스크롤 최적화
 
 ```typescript
-// announcementStore: 캐시된 서버 데이터
-- categories, popularKeywords, stats, selectedAnnouncement
-
-// filterStore: 사용자 필터 상태
-- exchange, category, keyword, dateRange
-- recentKeywords, searchHistory (localStorage 영구 저장)
-```
-
-### 무한 스크롤 최적화
-
-```typescript
-// 정확한 스크롤 감지로 성능 향상
+// 무한 스크롤 효율적 구현
 const handleScroll = useCallback(() => {
   const scrollPercentage = (scrollTop + clientHeight) / scrollHeight;
   if (scrollPercentage >= 0.9) fetchNextPage();
 }, [fetchNextPage]);
 ```
 
-## 🔧 코드 품질
+### 📱 반응형 기준점
 
-### 아키텍처 특징
+- **모바일**: 772px 미만
+- **PC**: 772px 이상
 
-- **단일 책임 원칙**: 각 모듈이 명확한 역할
-- **재사용성**: 공통 유틸리티 함수 분리
+## 🏗️ 아키텍처 특징
+
+### 컴포넌트 설계
+
+- **단일 책임 원칙** - 각 컴포넌트별 명확한 역할 분리
+- **재사용성** - 공통 컴포넌트 모듈화
+- **타입 안전성** - TypeScript 인터페이스 활용
+
+### 상태 관리 전략
+
+- **서버 상태**: TanStack Query로 캐싱, 동기화, 백그라운드 업데이트
+- **클라이언트 상태**: Zustand로 UI 상태, 필터 조건 관리
+- **영속성**: localStorage 활용한 사용자 설정 저장
+
+### 데이터 처리
+
+- **정적 데이터 활용** - JSON 파일 기반 Mock API 구현
+- **실제 API 패턴** - 실제 서버 연동 시 최소한의 변경으로 대응 가능
+- **에러 핸들링** - 네트워크 오류, 데이터 파싱 오류 처리
+
+## 🎯 기술적 의사결정
+
+### TanStack Query 선택 이유
+
+- **캐싱 최적화**: 동일 조건 재검색 시 즉시 응답
+- **백그라운드 동기화**: 사용자 경험 향상
+- **무한 스크롤**: 내장 지원으로 간편한 구현
+
+### Zustand 선택 이유
+
+- **경량성**: Redux 대비 보일러플레이트 최소화
+- **TypeScript 친화적**: 완전한 타입 안전성 제공
+- **직관적 API**: 학습 곡선 최소화
+
+### Tailwind CSS 선택 이유
+
+- **개발 속도**: 유틸리티 클래스로 빠른 프로토타이핑
+- **일관성**: 디자인 시스템 기반 일관된 스타일링
+- **성능**: 사용되지 않는 CSS 자동 제거

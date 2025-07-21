@@ -32,9 +32,9 @@ export function FormInput({
           w-full 
           h-[32px]
           px-[8px] py-[8px] 
-          border border-[#9DA6AD] 
+          border border-divider 
           rounded-[4px] 
-          text-[12px] text-[#5B6266]
+          text-[12px] text-muted-text
           placeholder-gray-400
           focus:outline-none 
           focus:border-point-blue 

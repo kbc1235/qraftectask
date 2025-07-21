@@ -24,7 +24,7 @@ export function AnnouncementItem({
 const DefaultContent = ({ announcement }: { announcement: Announcement }) => {
   const boxStyle = {
     timeText:
-      "flex gap-[10px] text-[#5B6266] text-[11px] font-[600] justify-between ",
+      "flex gap-[10px] text-muted-text text-[11px] font-[600] justify-between ",
   };
 
   const { data: categories } = useAllCategories();
@@ -43,7 +43,7 @@ const DefaultContent = ({ announcement }: { announcement: Announcement }) => {
   );
 
   return (
-    <div className="border border-[#CED9E1] rounded-[8px] py-[12px] px-[20px]">
+    <div className="border border-light-border rounded-[8px] py-[12px] px-[20px]">
       <div className="flex justify-between items-center py-[12px] px-[20px]">
         <div className="flex flex-col gap-[20px]">
           <div className="max-w-[174px] w-full">
@@ -57,8 +57,8 @@ const DefaultContent = ({ announcement }: { announcement: Announcement }) => {
             </p>
           </div>
           <div>
-            <p className="text-[#5B6266] text-[13px] font-[600]">{secCode}</p>
-            <p className="text-[#5B6266] text-[13px] font-[400]">
+            <p className="text-muted-text text-[13px] font-[600]">{secCode}</p>
+            <p className="text-muted-text text-[13px] font-[400]">
               {korName && secName
                 ? `${korName} (${secName})`
                 : korName || secName}
@@ -70,22 +70,22 @@ const DefaultContent = ({ announcement }: { announcement: Announcement }) => {
             {topics.map((topic, index) => (
               <li
                 key={index}
-                className="flex py-[7px] px-[16px] rounded-[4px] border border-[#546A78] bg-[#FFFFFF] text-[#546A78] text-[13px] font-[600]"
+                className="flex py-[7px] px-[16px] rounded-[4px] border border-dark-border bg-white text-dark-border text-[13px] font-[600]"
               >
                 {topic}
               </li>
             ))}
           </ul>
-          <p className="p-[6px] rounded-[40px] bg-[#F5F9FF] text-[#5091FF] text-[12px] font-[600] text-center">
+          <p className="p-[6px] rounded-[40px] bg-light-blue text-accent-blue text-[12px] font-[600] text-center ">
             {categoryName}
           </p>
         </div>
       </div>
       <div className="mt-[10px] py-[10px] px-[20px]">
-        <p className="text-[#5B6266] text-[18px] font-[400] ">
+        <p className="text-muted-text text-[18px] font-[400] ">
           {announcement.analysisDetails.summarizeTinyKor}
         </p>
-        <p className="text-[#5B6266] text-[18px] font-[400]  mt-[10px]">
+        <p className="text-muted-text text-[18px] font-[400]  mt-[10px]">
           {announcement.analysisDetails.summarizeLongKor}
         </p>
       </div>
@@ -103,9 +103,9 @@ const MobileContent = ({ announcement }: { announcement: Announcement }) => {
   const kstDate = formatToKST(announcement.dataDate);
 
   return (
-    <div className="p-[12px] border-t border-[#CED9E1] first:border-t-0">
+    <div className="p-[12px] border-t border-light-border first:border-t-0">
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="flex items-center bg-[#758A8A] rounded-full px-[8px] py-[4px] text-[#fff] text-[13px] font-[500]">
+        <span className="flex items-center bg-tag-background rounded-full px-[8px] py-[4px] text-white text-[13px] font-[500]">
           {categoryName}
         </span>
         <div className="flex flex-wrap gap-[12px] ml-[24px]">
@@ -113,7 +113,7 @@ const MobileContent = ({ announcement }: { announcement: Announcement }) => {
             (topic, index) => (
               <span
                 key={index}
-                className="text-[#002C2CB2] text-[12px] font-[700]"
+                className="text-topic-text text-[12px] font-[700]"
               >
                 #{topic}
               </span>
@@ -122,10 +122,10 @@ const MobileContent = ({ announcement }: { announcement: Announcement }) => {
         </div>
       </div>
       <div className="mt-[8px]">
-        <p className="text-[#5B6266] font-[400] text-[14px] leading-[1.9]">
+        <p className="text-muted-text font-[400] text-[14px] leading-[1.9]">
           {announcement.analysisDetails.summarizeTinyKor}
         </p>
-        <p className="mt-[6px] text-[#A1A2AB] font-[500] text-[12px] leading-[1.5]">
+        <p className="mt-[6px] text-light-text font-[500] text-[12px] leading-[1.5]">
           {kstDate}
         </p>
       </div>

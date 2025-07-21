@@ -1,27 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* 커스텀 색상 CSS 변수 정의 */
+:root {
+  --color-point-blue: #6991eb;
+  --color-accent-blue: #5091ff;
+  --color-light-blue: #f5f9ff;
+  --color-main-text: #333d4e;
+  --color-secondary-text: #2f3b43;
+  --color-muted-text: #5b6266;
+  --color-light-text: #a1a2ab;
+  --color-dark-navy: #494c5f;
+  --color-topic-text: #002c2cb2;
+  --color-divider: #9da6ad;
+  --color-light-border: #ced9e1;
+  --color-dark-border: #546a78;
+  --color-light-gray: #edeef0;
+  --color-pastel-blue: #ecf1f6;
+  --color-tag-background: #758a8a;
+  --color-icon-gray: #858585;
+  --color-default: #f3f7fa;
+}
+
+/* 커스텀 색상 클래스 직접 정의 */
+.bg-white {
+  background-color: #ffffff !important;
+}
+.bg-default {
+  background-color: var(--color-default) !important;
+}
+.bg-light-blue {
+  background-color: var(--color-light-blue) !important;
+}
+.bg-pastel-blue {
+  background-color: var(--color-pastel-blue) !important;
+}
+.bg-tag-background {
+  background-color: var(--color-tag-background) !important;
+}
+
+.text-main-text {
+  color: var(--color-main-text) !important;
+}
+.text-secondary-text {
+  color: var(--color-secondary-text) !important;
+}
+.text-muted-text {
+  color: var(--color-muted-text) !important;
+}
+.text-light-text {
+  color: var(--color-light-text) !important;
+}
+.text-dark-navy {
+  color: var(--color-dark-navy) !important;
+}
+.text-point-blue {
+  color: var(--color-point-blue) !important;
+}
+.text-accent-blue {
+  color: var(--color-accent-blue) !important;
+}
+.text-topic-text {
+  color: var(--color-topic-text) !important;
+}
+
+.border-divider {
+  border-color: var(--color-divider) !important;
+}
+.border-light-border {
+  border-color: var(--color-light-border) !important;
+}
+.border-dark-border {
+  border-color: var(--color-dark-border) !important;
+}
+.border-point-blue {
+  border-color: var(--color-point-blue) !important;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #f3f7fa;
+  background-color: var(--color-default);
   height: 100%;
   font-family: "Inter", sans-serif !important;
 }
 
 #root {
   height: 100%;
-  background-color: #f3f7fa;
+  background-color: var(--color-default);
 }
 
 /* react-datepicker 커스텀 */
@@ -37,7 +106,7 @@ body {
   font-family: "Inter", sans-serif !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  color: #333d4e !important;
+  color: var(--color-main-text) !important;
   margin-bottom: 8px !important;
 }
 
@@ -47,12 +116,12 @@ body {
 
 .react-datepicker__navigation--previous {
   left: 12px !important;
-  border-right-color: #6991eb !important;
+  border-right-color: var(--color-point-blue) !important;
 }
 
 .react-datepicker__navigation--next {
   right: 12px !important;
-  border-left-color: #6991eb !important;
+  border-left-color: var(--color-point-blue) !important;
 }
 
 .react-datepicker__day-names {
@@ -75,7 +144,7 @@ body {
   font-family: "Inter", sans-serif !important;
   font-size: 14px !important;
   font-weight: 300 !important;
-  color: #5b6266 !important;
+  color: var(--color-muted-text) !important;
   width: 32px !important;
   height: 32px !important;
   line-height: 32px !important;
@@ -85,12 +154,12 @@ body {
 }
 
 .react-datepicker__day:hover {
-  background-color: #ecf1f6 !important;
-  color: #333d4e !important;
+  background-color: var(--color-pastel-blue) !important;
+  color: var(--color-main-text) !important;
 }
 
 .react-datepicker__day--selected {
-  background-color: #6991eb !important;
+  background-color: var(--color-point-blue) !important;
   color: white !important;
   font-weight: 500 !important;
 }
@@ -100,23 +169,23 @@ body {
 }
 
 .react-datepicker__day--keyboard-selected {
-  background-color: #ecf1f6 !important;
-  color: #333d4e !important;
+  background-color: var(--color-pastel-blue) !important;
+  color: var(--color-main-text) !important;
 }
 
 .react-datepicker__day--in-selecting-range {
-  background-color: #ecf1f6 !important;
-  color: #333d4e !important;
+  background-color: var(--color-pastel-blue) !important;
+  color: var(--color-main-text) !important;
 }
 
 .react-datepicker__day--in-range {
-  background-color: #ecf1f6 !important;
-  color: #333d4e !important;
+  background-color: var(--color-pastel-blue) !important;
+  color: var(--color-main-text) !important;
 }
 
 .react-datepicker__day--range-start,
 .react-datepicker__day--range-end {
-  background-color: #6991eb !important;
+  background-color: var(--color-point-blue) !important;
   color: white !important;
   font-weight: 500 !important;
 }
@@ -151,7 +220,7 @@ body {
 /* 스크롤바 커스텀 */
 .scroll-custom {
   scrollbar-width: thin !important;
-  scrollbar-color: #000 #f3f7fa !important;
+  scrollbar-color: #000 var(--color-default) !important;
   scrollbar-gutter: auto !important;
 }
 
@@ -161,7 +230,7 @@ body {
 }
 
 .scroll-custom::-webkit-scrollbar-track {
-  background: #f3f7fa !important;
+  background: var(--color-default) !important;
 }
 
 .scroll-custom::-webkit-scrollbar-thumb {

@@ -33,7 +33,7 @@ function FormBox({
       className={`flex items-center gap-[12px] py-[4px] px-[12px] ${className}`}
     >
       {label && (
-        <p className="min-w-[42px] text-[15px] font-[600] text-[#5B6266]">
+        <p className="min-w-[42px] text-[15px] font-[600] text-muted-text">
           {label}
         </p>
       )}
@@ -70,7 +70,7 @@ function AppContent() {
 
   return (
     <div className="w-full min-h-screen flex flex-col items-center">
-      <div className="max-w-[772px] w-full h-[48px] flex bg-[#fff] py-[4px] rounded-[3px]">
+      <div className="max-w-[772px] w-full h-[48px] flex bg-white py-[4px] rounded-[3px]">
         <FormBox label="거래소">
           <FormSelect
             options={exchangeOptions}
@@ -98,7 +98,7 @@ function AppContent() {
       </div>
 
       <div
-        className={`max-w-[772px] w-full bg-[#fff] py-[10px] px-[10px] rounded-[3px] mt-[10px] overflow-y-auto scroll-custom ${
+        className={`max-w-[772px] w-full bg-white py-[10px] px-[10px] rounded-[3px] mt-[10px] overflow-y-auto scroll-custom ${
           isPc ? "h-[calc(100vh-58px)]" : "h-[100vh]"
         }`}
       >

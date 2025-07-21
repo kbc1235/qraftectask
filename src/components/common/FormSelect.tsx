@@ -81,7 +81,7 @@ export function FormSelect({
           h-[32px]
           bg-white 
           p-[8px]
-          border border-[#9DA6AD] 
+          border border-divider 
           rounded-[4px]
           text-sm
           cursor-pointer
@@ -107,8 +107,8 @@ export function FormSelect({
         <span
           className={
             selectedOption
-              ? "text-[12px] text-[#5B6266]"
-              : "text-[12px] text-[#9DA6AD]"
+              ? "text-[12px] text-muted-text"
+              : "text-[12px] text-divider"
           }
         >
           {selectedOption ? selectedOption.label : placeholder}
@@ -134,7 +134,7 @@ export function FormSelect({
         </div>
       </div>
       {isOpen && !disabled && (
-        <div className="absolute z-50 w-full mt-1 bg-white border border-[#9DA6AD] rounded-[4px] shadow-lg max-h-60 overflow-y-auto bg-[#ffffff]">
+        <div className="absolute z-50 w-full mt-1 bg-white border border-divider rounded-[4px] shadow-lg max-h-60 overflow-y-auto bg-white">
           {options.map((option) => (
             <div
               key={option.value}
@@ -146,8 +146,8 @@ export function FormSelect({
                 transition-colors duration-150
                 ${
                   option.disabled
-                    ? "text-[12px] text-[#9DA6AD] cursor-not-allowed bg-gray-50"
-                    : "text-[12px] text-[#5B6266] hover:bg-pastel-blue"
+                    ? "text-[12px] text-divider cursor-not-allowed bg-gray-50"
+                    : "text-[12px] text-muted-text hover:bg-pastel-blue"
                 }
                 ${
                   option.value === value

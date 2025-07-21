@@ -91,9 +91,9 @@ export function DateRange({
           h-[32px]
           px-[10px] py-[7px] pr-[40px]
           bg-white
-          border border-[#9DA6AD]
+          border border-divider
           rounded-[4px]
-          font-inter text-[14px] font-light text-[#5B6266]
+          font-inter text-[14px] font-light text-muted-text
           cursor-pointer
           focus:outline-none
           focus:border-point-blue
@@ -111,7 +111,7 @@ export function DateRange({
           }
         `}
       />
-      <div className="absolute h-[16px] w-[16px] right-[12px] top-1/2 transform -translate-y-1/2 pointer-events-none text-[#5B6266]">
+      <div className="absolute h-[16px] w-[16px] right-[12px] top-1/2 transform -translate-y-1/2 pointer-events-none text-muted-text">
         <svg
           width="20"
           height="20"
@@ -163,7 +163,8 @@ export function DateRange({
           >
             <path
               d="M13.9395 11.5605L20.379 18L13.9395 24.4395L16.0605 26.5605L24.621 18L16.0605 9.43949L13.9395 11.5605Z"
-              fill="#858585"
+              fill="currentColor"
+              className="text-icon-gray"
             />
           </svg>
         </div>
