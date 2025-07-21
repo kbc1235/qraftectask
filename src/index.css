@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f7fa;
+  height: 100%;
+  font-family: "Inter", sans-serif !important;
+}
+
+#root {
+  height: 100%;
+  background-color: #f3f7fa;
+}
+
+/* react-datepicker 커스텀 */
+.react-datepicker__header {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #e9ecef !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+  padding: 8px 0 !important;
+}
+
+.react-datepicker__current-month {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #333d4e !important;
+  margin-bottom: 8px !important;
+}
+
+.react-datepicker__navigation {
+  top: 12px !important;
+}
+
+.react-datepicker__navigation--previous {
+  left: 12px !important;
+  border-right-color: #6991eb !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 12px !important;
+  border-left-color: #6991eb !important;
+}
+
+.react-datepicker__day-names {
+  border-bottom: 1px solid #e9ecef !important;
+  padding-bottom: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.react-datepicker__day-name {
+  font-family: "Inter", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #6c757d !important;
+  width: 32px !important;
+  height: 24px !important;
+  line-height: 24px !important;
+}
+
+.react-datepicker__day {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  color: #5b6266 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  margin: 1px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #ecf1f6 !important;
+  color: #333d4e !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #6991eb !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #5a7fe0 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: #ecf1f6 !important;
+  color: #333d4e !important;
+}
+
+.react-datepicker__day--in-selecting-range {
+  background-color: #ecf1f6 !important;
+  color: #333d4e !important;
+}
+
+.react-datepicker__day--in-range {
+  background-color: #ecf1f6 !important;
+  color: #333d4e !important;
+}
+
+.react-datepicker__day--range-start,
+.react-datepicker__day--range-end {
+  background-color: #6991eb !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #cdd3d8 !important;
+}
+
+.react-datepicker__day--disabled {
+  color: #cdd3d8 !important;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day--disabled:hover {
+  background-color: transparent !important;
+  color: #cdd3d8 !important;
+}
+
+.react-datepicker__month-container {
+  padding: 8px !important;
+}
+
+.react-datepicker__week {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+/* 스크롤바 커스텀 */
+.scroll-custom {
+  scrollbar-width: thin !important;
+  scrollbar-color: #000 #f3f7fa !important;
+  scrollbar-gutter: auto !important;
+}
+
+.scroll-custom::-webkit-scrollbar {
+  width: 1px !important;
+  height: 1px !important;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+  background: #f3f7fa !important;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background: #000 !important;
+  border-radius: 1px !important;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb:hover {
+  background: #333 !important;
+}
+
+@media (max-width: 771px) {
+  .pc-container {
+    display: none !important;
+  }
+}
+
+@media (min-width: 772px) {
+  .pc-container {
+    display: flex !important;
+  }
+}
